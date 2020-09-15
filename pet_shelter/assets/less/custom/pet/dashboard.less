@@ -1,0 +1,150 @@
+#banner_section{
+    padding: 39px 20px 20px 20px;
+    background-image: url("../../../images/banner.png");
+    background-repeat: no-repeat;
+    background-position: 295px;
+
+    h1{
+        font-size: 48px;
+        line-height: 60px;
+        width: 264.03px;
+        color: #141414;
+        span{
+            &.orange_color{
+                color: #FF5C4C;
+            }
+            &.gray_color{
+                color: #BDBDBD;
+            }
+         }
+    }
+    p{
+        font-size: 14px;
+        line-height: 21px;
+        color: #BDBDBD;
+        width: 266px;
+    }
+}
+#pets_list_section{
+    h5{
+        text-align: center;
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 28px;
+        margin-top: 57px;
+    }    
+
+    table{
+        width: 100%;
+        tbody{
+            tr{
+                height: 69px;
+                border-bottom: 5px solid #f5f9fa;
+                &:last-child{
+                    border-bottom: none;
+                }
+
+                td{
+                    background-color: #fff;
+                    color: #333333;
+                    padding: 0px 25px;
+
+                    &:nth-child(1){
+                        width: 400px;
+                    }
+
+                    &:nth-child(2){
+                        width: 250px;
+                    }
+
+                    button, a{
+                        color: #BDBDBD;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        cursor: pointer;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#pet_details_modal{
+    .modal-dialog{
+        width: 480px;
+        .modal-content{
+            border: none;
+            .modal-header{
+                border: none;
+                padding: 17px 24px 4px 24px;
+
+                h5{
+                    color: #333333;
+                    font-size: 18px;
+                    margin: 0px;
+                }
+
+                button{
+
+                }
+            }
+
+            .modal-body{
+                padding: 24px 24px 29px 24px;
+                table{
+                    tbody{
+                        tr{
+                            border-bottom: 16px solid #fff;
+
+                            &:last-child{
+                                border-bottom: none;
+                            }
+
+                            td{
+                                &:first-child{
+                                    color: #BDBDBD;
+                                    width: 120px;
+                                }
+
+                                &:last-child{
+                                    color: #333333;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .modal-footer{
+                background: #F2F2F2;
+                border: none;
+                padding: 24px;
+                display: flex;
+                align-items: center;
+                >*{
+                    margin: 0px;
+                }
+                span{
+                    margin-left: 24px;
+                    color: #BDBDBD;
+                }
+                button{
+                    margin-left: 24px;
+                    color: #fff;
+
+                    &.btn-warning{
+                        background-color: #F5C388;
+                        border: none;
+                    }
+
+                    &.btn-danger{
+                        background-color: #FF5C4C;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}

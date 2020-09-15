@@ -1,0 +1,36 @@
+<form action="/api/pet/<%= (DATA.pet.id === null) ? 'add_pet' : 'update_pet' %>" id="manage_pet_form" data-is-processing="0">
+    <!-- Edit -->
+    <% if(DATA.pet.id !== null){ %>
+        <input type="hidden" name="id" value="<%- DATA.pet.id %>">
+    <% } %>
+    
+    <div class="form-group">
+        <label for="">Pet Name</label>
+        <input class="form-control" type="text" name="name" value="<%- DATA.pet.name %>">
+    </div>
+    <div class="form-group">
+        <label for="">Pet Type</label>
+        <select class="form-control" name="type" id="">
+            <option value="1" <%= DATA.pet.type == 'Cat' ? "selected=selected" : "" %></option>Cat</option>
+            <option value="2" <%= DATA.pet.type == 'Dog' ? "selected=selected" : "" %></option>Dog</option>
+            <option value="3" <%= DATA.pet.type == 'Duck' ? "selected=selected" : "" %></option>Duck</option>
+            <option value="4" <%= DATA.pet.type == 'Penguin' ? "selected=selected" : "" %></option>Penguin</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Description</label>
+        <textarea class="form-control" name="description" id="" ><%- DATA.pet.description %></textarea>
+    </div>
+    <div class="form-group" id="pet_skills_form_group">
+        <label for="">Skills</label>
+        <div id="pet_skills_input_container">
+            <input type="text" class="form-control" name="skills[0]" value="<%- DATA.pet.skills[0] %>">
+            <input type="text" class="form-control" name="skills[1]" value="<%- DATA.pet.skills[1] %>">
+            <input type="text" class="form-control" name="skills[2]" value="<%- DATA.pet.skills[2] %>">
+        </div>
+    </div>
+
+    <div class="btn_container">
+        <button type="submit" class="btn btn-danger"> <%= DATA.pet.id === null ? 'Add' : 'Update' %> Pet</button>
+    </div>
+</form>

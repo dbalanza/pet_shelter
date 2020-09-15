@@ -1,0 +1,41 @@
+<nav class="navbar navbar-light bg-light">
+	<a class="navbar-brand" href="#">
+		<img src="../../assets/images/logo.png" alt="" loading="lazy">
+	</a>
+ 
+	<ul class="list-unstyled">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Events</a></li>
+		<li><a href="/pets/new" class="btn btn-danger">Add pet to Shelter</a></li>
+	</ul>
+</nav>
+
+<section id="banner_section">
+  	<h1>Let's <span class="orange_color">Adopt</span> Don't <span class="gray_color">Shop</span></h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque id lorem nisi.</p>
+</section>
+
+<section id="pets_list_section">
+	<h5>These pets are looking for a good home</h5>
+	<table id="pets_table">
+		<tbody>
+<% 	if(DATA.pets.length > 0){ %>
+			<%- include("templates/_pets_item.partials.ejs", {pets: DATA.pets}) %>
+<% 	}else{ %>
+		<tr id="no_pets_available">
+			<td colspan="4" class="center">No available pets.</td>
+		</tr>
+<% 	} %>
+		</tbody>
+	</table>
+</section>
+
+<!-- POST/GET Forms -->
+<form id="fetch_pets_form" action="/api/pets" data-is-processing="0">
+	<input type="hidden" name="filter_type" value="type">
+</form>
+
+<form id="fetch_pet_form" action="/api/pet/select_pet" data-is-processing="0">
+	<input type="hidden" name="pet_id" value="" />
+</form>

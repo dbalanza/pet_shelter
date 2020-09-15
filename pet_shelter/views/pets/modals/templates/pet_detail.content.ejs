@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <h5 class="modal-title">Details about: <%= DATA.pet.name %></h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body" data-pet-id="<%= DATA.pet.id %>">
+    <table>
+        <tbody>
+            <tr>
+                <td>Pet Type</td>
+                <td><%= DATA.pet.type %></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><%= DATA.pet.description %></td>
+            </tr>
+            <% console.log(DATA.pet)
+             let skills = (DATA.pet.skills != null) ? JSON.parse(DATA.pet.skills) : [];
+
+                if(skills.length > 0) {%>
+                <tr>
+                    <td>Skills</td>
+                    <td>
+                        <!-- Display all the skills -->
+                        <% for (index in skills){ %>
+                            <%= skills[index] %>
+                            <% if(index < skills.length - 1){%>
+                                <span>*</span>
+                            <% } %>    
+                        <% } %>    
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" id="adopt_pet_btn">Adopt <%= DATA.pet.name %></button>
+</div>
+
+<form id="remove_pet_form" action="/api/pet/adopt_pet" data-is-processing="0">
+    <input type="hidden" name="pet_id" value="<%= DATA.pet.id %>">
+</form>

@@ -1,0 +1,12 @@
+<%  for(index in pets){ %>
+        <tr data-pet-id="<%= DATA.pets[index].id %>">
+            <td><%= pets[index].name %></td>
+            <td><%= pets[index].type %></td>
+            <td>
+                <button class="show_pet_details_btn">Details</button>
+            </td>
+            <td>
+                <a href="/pets/<%= pets[index].id %>/edit">Edit</a>
+            </td>
+        </tr>
+<%  } %>

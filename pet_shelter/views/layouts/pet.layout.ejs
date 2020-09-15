@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= PAGE.title %></title>
+		<% 
+			for (let index in PAGE.assets.javascripts){ %>
+				<script src="<%= PAGE.assets.javascripts[index].file %>"></script>
+		<%	}	%>
+	
+		<% 
+			for (let index in PAGE.assets.stylesheets){ %>
+				<link rel="stylesheet" href="<%= PAGE.assets.stylesheets[index].file %>">
+		<%	}	%>
+	</head>
+	<body>
+		<div id="wrapper" class="container">
+			<%- include("../pets/" + PAGE.view + ".ejs") %>
+			<footer>
+				<p>c2020. <span class="orange_color">V88Studios.</span>	All Rights Reserved</p>
+			</footer>
+		</div>
+		
+		<!-- Include Page modals -->
+		<%  for (let key in PAGE.modals) { %>
+			<%-  include(PAGE.modals[key].file, {MODAL_DATA: PAGE.modals[key].data}) %>
+		<%  }  %>
+	</body>
+</html>

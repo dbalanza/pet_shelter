@@ -1,0 +1,106 @@
+nav{
+    #back_to_home_btn{
+        color: #bdbdbd;
+        text-decoration: none;
+        font-size: 14px;
+    }   
+}
+#banner_section{
+    padding: 39px 20px 20px 20px;
+    background-image: url("../../../images/dog.png");
+    background-repeat: no-repeat;
+    background-position: 442px;
+
+    h1{
+        font-size: 48px;
+        line-height: 60px;
+        width: 365px;
+        color: #141414;
+        span{
+            &.orange_color{
+                color: #FF5C4C;
+            }
+            &.gray_color{
+                color: #BDBDBD;
+            }
+         }
+    }
+    p{
+        font-size: 14px;
+        line-height: 21px;
+        color: #BDBDBD;
+        width: 365px;
+    }
+}
+
+#manage_pet_form{
+    width: 567px;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 40px rgba(34, 69, 82, 0.05);
+    border-radius: 4px;
+    margin: 60px auto 0px auto;
+    padding: 24px;
+
+    #pet_skills_form_group{
+        align-items: flex-start;
+
+        #pet_skills_input_container{
+            width: 100%;
+
+            .form-control{
+                width: 100%;
+                margin-bottom: 10px;
+
+
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+    }
+    
+    .form-group{
+        align-items: center;
+        display: flex;
+        margin-bottom: 10px;
+
+        label{
+            width: 119px;
+            color: #BDBDBD;
+            margin-bottom: 0px;
+            flex: none;
+        }
+        .form-control{
+            background: #F2F2F2;
+            border-radius: 4px;
+            border: none;
+            text-decoration: none;
+            resize: none;
+            padding: 0px 15px;
+            
+            &.border_red{
+                border: 1px solid red !important;
+            }
+        }
+        textarea{
+            height: 84px;
+            padding: 9px 15px;
+        }
+        select{
+            padding: 0px 11px;
+        }
+    }
+
+    .btn_container{
+        text-align: right;
+        margin-top: 40px;
+
+        button{
+            width: 96px;
+            height: 35px;
+            background-color: #FF5C4C;
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light">
+    <a href="/" id="back_to_home_btn">Back to Home</a>
+    <a class="navbar-brand" href="#">
+        <img src="../../assets/images/logo.png" alt="" loading="lazy">
+    </a>
+    <ul class="list-unstyled">
+        <li></li>
+    </ul>
+</nav>
+
+<% if(DATA.pet.id === null){ %>
+    <section id="banner_section">
+        <h1>Know a pet that needs a home?</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque id lorem nisi.</p>
+    </section>
+<% } %>
+
+<%- include("./templates/_manage_pet_form.partials.ejs") %>
